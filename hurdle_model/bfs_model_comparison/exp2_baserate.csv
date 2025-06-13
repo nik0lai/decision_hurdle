@@ -1,0 +1,7 @@
+model,denominator,bf_log,experiment,condition
+simple,simple,0,exp2,baserate
+contrast,simple,297.6435322075886,exp2,baserate
+hurdle,simple,473.2936739218967,exp2,baserate
+full,simple,771.0588869412604,exp2,baserate
+contrast,contrast,0,exp2,baserate
+hurdle,contrast,175.750596337748,exp2,baserate

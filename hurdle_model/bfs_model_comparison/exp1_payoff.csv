@@ -1,0 +1,7 @@
+model,denominator,bf_log,experiment,condition
+simple,simple,0,exp1,payoff
+contrast,simple,94.56403888740897,exp1,payoff
+hurdle,simple,263.52613875601673,exp1,payoff
+full,simple,358.0854706016362,exp1,payoff
+contrast,contrast,0,exp1,payoff
+hurdle,contrast,168.88388856601887,exp1,payoff
