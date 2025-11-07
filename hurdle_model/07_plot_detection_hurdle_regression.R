@@ -94,7 +94,7 @@ for (e in experiments) {
     scale_x_discrete(labels = function(x) str_to_title(x)) +
     # manually create a legend for bias/control condition
     scale_color_manual(breaks=c('baserate_control', 'cue_control', 'baserate_present', 'cue_present'), 
-                       labels=c('baserate_control'='', 'cue_control'='', 'baserate_present'='No bias', 'cue_present'='Bias'), 
+                       labels=c('baserate_control'='', 'cue_control'='', 'baserate_present'='Control', 'cue_present'='Bias'), 
                        values = get_condition_colors()) +
     scale_shape_manual(breaks = c('Detection', 'Reproduction', 'det', 'rep'), 
                        labels = c('Detection'='', 'Reproduction'='', 'det'='Detection', 'rep'='Reproduction'), 

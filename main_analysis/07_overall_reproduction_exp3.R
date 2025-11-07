@@ -31,7 +31,7 @@ reproduction_data <-
 p_reproduction <- plot_contrast_reproduction(reproduction_data)
 p_reproduction <- 
   p_reproduction + 
-  facet_wrap(. ~ bias_source, labeller = labeller(bias_source = labels_bias_source))
+  facet_wrap(. ~ bias_source, labeller = labeller(bias_source = get_labels_bias_source_sample(reproduction_data)))
 
 # Test for difference between conditions
 reproduction_bf <- 

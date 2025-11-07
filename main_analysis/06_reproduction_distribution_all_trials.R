@@ -25,14 +25,14 @@ make_plot <- function(df) {
     scale_y_continuous(breaks=breaks_pretty(n=3)) +
     ylab('Count') + xlab('Reproduced contrast') + 
     ggtitle('Overall distribution of reproduction responses') + 
-    scale_fill_manual(values=get_condition_colors(), breaks=c('cue_control', 'cue_present'), labels=c('cue_present'='Bias', 'cue_control'='No bias')) +
-    scale_color_manual(values=get_condition_colors(), breaks=c('cue_control', 'cue_present'), labels=c('cue_present'='Bias', 'cue_control'='No bias'))  +
+    scale_fill_manual(values=get_condition_colors(), breaks=c('cue_control', 'cue_present'), labels=c('cue_present'='Bias', 'cue_control'='Control')) +
+    scale_color_manual(values=get_condition_colors(), breaks=c('cue_control', 'cue_present'), labels=c('cue_present'='Bias', 'cue_control'='Control'))  +
     # apply minimal theme
     theme_bw() +
     guides(shape='none',
            linetype='none',
-           color=guide_legend('Bias direction', override.aes = list(shape=c(NA,NA), fill=c('gray', 'gray10'), color=c('gray', 'gray10'))),
-           fill=guide_legend('Bias direction'), override.aes = list(shape=c(NA,NA), fill=c('gray', 'gray10'), color=c('gray', 'gray10'))) +
+           color=guide_legend('Condition', override.aes = list(shape=c(NA,NA), fill=c('gray', 'gray10'), color=c('gray', 'gray10'))),
+           fill=guide_legend('Condition'), override.aes = list(shape=c(NA,NA), fill=c('gray', 'gray10'), color=c('gray', 'gray10'))) +
     theme(legend.position = 'bottom')
   
 }

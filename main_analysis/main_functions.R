@@ -135,11 +135,11 @@ get_labels_stim_code <- function(sep) {
                   sprintf('present%shigh', sep))
   
   lsc <- c(sprintf('Control%sAbsent', sep), 
-           sprintf('Present%sAbsent', sep), 
+           sprintf('Bias%sAbsent', sep), 
            sprintf('Control%sLow contrast', sep), 
-           sprintf('Present%sLow contrast', sep), 
+           sprintf('Bias%sLow contrast', sep), 
            sprintf('Control%sHigh contrast', sep), 
-           sprintf('Present%sHigh contrast', sep))
+           sprintf('Bias%sHigh contrast', sep))
   names(lsc) <- stim_levels
   
   return(lsc)
@@ -380,8 +380,8 @@ plot_reproduction_distribution <- function(df) {
     scale_y_continuous(breaks=breaks_pretty(n=3)) +
     ylab('Count') + xlab('Reproduced contrast') + 
     ggtitle('Distribution of non-zero reproductions') +
-    scale_fill_manual(values=get_condition_colors(), breaks=c('cue_control', 'cue_present'), labels=c('cue_present'='Bias', 'cue_control'='No bias')) +
-    scale_color_manual(values=get_condition_colors(), breaks=c('cue_control', 'cue_present'), labels=c('cue_present'='Bias', 'cue_control'='No bias')) +
+    scale_fill_manual(values=get_condition_colors(), breaks=c('cue_control', 'cue_present'), labels=c('cue_present'='Bias', 'cue_control'='Control')) +
+    scale_color_manual(values=get_condition_colors(), breaks=c('cue_control', 'cue_present'), labels=c('cue_present'='Bias', 'cue_control'='Control')) +
     theme(legend.position = 'none') 
   
 }

@@ -40,7 +40,7 @@ rep_data_zero <-
 # Plot
 p_proportion_zero <-
   plot_proportion_zero_reproduction(rep_data_zero) +
-  ylab('Proportion of zero\nconctrast reproductions')
+  ylab('Proportion of zero\ncontrast reproductions')
 
 # Test difference
 rep_proportion_zero_bf <- 
@@ -78,12 +78,12 @@ p_proportion_zero <-
 p_proportion_zero <-
   p_proportion_zero +
   scale_color_manual(breaks=c('cue_control', 'cue_present'), 
-                     labels=c('cue_control'='No bias', 'cue_present'='Bias'),
+                     labels=c('cue_control'='Control', 'cue_present'='Bias'),
                      values=get_condition_colors()) +
   guides(
     linetype='none',
     fill='none',
-    color=guide_legend('Bias direction', override.aes = list(alpha=c(1,1), fill=c('gray', 'gray10'), color=c('gray', 'gray10')))
+    color=guide_legend('Condition', override.aes = list(alpha=c(1,1), fill=c('gray', 'gray10'), color=c('gray', 'gray10')))
   ) +
   theme_bw() +
   theme(
@@ -198,8 +198,8 @@ p_rep_non_zero <-
   ) +
   guides(shape='none',
          linetype='none',
-         color=guide_legend('Bias direction', override.aes = list(shape=c(NA,NA), fill=c('gray', 'gray10'), color=c('gray', 'gray10'))),
-         fill=guide_legend('Bias direction'), override.aes = list(shape=c(NA,NA), fill=c('gray', 'gray10'), color=c('gray', 'gray10')))
+         color=guide_legend('Condition', override.aes = list(shape=c(NA,NA), fill=c('gray', 'gray10'), color=c('gray', 'gray10'))),
+         fill=guide_legend('Condition'), override.aes = list(shape=c(NA,NA), fill=c('gray', 'gray10'), color=c('gray', 'gray10')))
 
 # Combine plots -----------------------------------------------------------
 
@@ -209,7 +209,7 @@ p_rep_non_zero <-
   #       legend.box.spacing = unit(-3, "mm")) &
   # guides(color='none',
   #        shape='none',
-  #        fill=guide_legend('Bias direction', override.aes = list(shape=c(NA,NA), fill=c('gray', 'gray10'), color=c('gray', 'gray10'))))
+  #        fill=guide_legend('Condition', override.aes = list(shape=c(NA,NA), fill=c('gray', 'gray10'), color=c('gray', 'gray10'))))
 
 ggsave('plots/fig_exp3Rep.png', width = 11.5, height = 5, scale=.8, dpi=600, device = png, bg='white')
 
