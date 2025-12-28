@@ -1,6 +1,6 @@
 # Packages
 if (!require('pacman', quietly = TRUE)) install.packages('pacman'); library('pacman', quietly = TRUE)
-p_load(magrittr, readr, dplyr, tidyr, ggplot2, tibble, stringr, purrr, scales, patchwork, scales, colorspace)
+p_load(magrittr, readr, dplyr, tidyr, ggplot2, tibble, stringr, purrr, scales, patchwork, scales, colorspace, ggpubr)
 
 source('main_analysis/main_functions.R')
 
