@@ -365,14 +365,14 @@ plot_proportion_zero_reproduction <- function(df) {
 plot_reproduction_distribution <- function(df) {
   # bin width
   bin_width <- .003; 
-  
+    
   # make plot
   df %>%
     ggplot(aes(x=answer, 
                fill = interaction(bias_source, bias_direction, sep='_'),
                color = interaction(bias_source, bias_direction, sep='_'))) +
     facet_grid(rows = vars(bias_source), cols = vars(contrast_level),
-               labeller = labeller(bias_source = labels_bias_source, 
+               labeller = labeller(bias_source = get_labels_bias_source_sample(rep_data) %>% str_replace(replacement = '\n(', pattern = ' \\(', .), 
                                    contrast_level = c('absent' = 'Absent', 'low'='Low Contrast', 'high'='High Contrast'))) +
     geom_histogram(data=df %>% filter(bias_direction=='present'), alpha=.7, position = 'identity', binwidth = bin_width) +
     geom_histogram(data=df %>% filter(bias_direction=='control'), alpha=.4, position = 'identity', binwidth = bin_width) +
