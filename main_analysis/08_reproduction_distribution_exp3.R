@@ -146,6 +146,9 @@ rep_all_data_summary <-
 # Plot distributions
 p_rep_non_zero <-
   plot_reproduction_distribution(rep_data) +
+  facet_grid(rows = vars(bias_source), cols = vars(contrast_level),
+             labeller = labeller(bias_source = get_labels_bias_source_sample(rep_data),
+                                 contrast_level = c('absent' = 'Absent', 'low'='Low Contrast', 'high'='High Contrast'))) +
   # add error bars
   geom_errorbarh(data=rep_all_data_summary %>% filter(bias_direction=='present'), 
                aes(y=-50, x=y, xmin=ymin, xmax=ymax),
