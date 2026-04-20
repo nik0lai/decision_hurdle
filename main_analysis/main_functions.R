@@ -98,7 +98,7 @@ plot_proportion_present <- function(df) {
                  fun=mean, geom='errorbar', width=.15,
                  fun.min = function(x) mean(x) - sd(x)/sqrt(length(x)), 
                  fun.max = function(x) mean(x) + sd(x)/sqrt(length(x))) +
-    ggtitle('Decision task') +
+    ggtitle('Detection task') +
     ylab('Proportion of "present" answers') +
     # xlab('Bias condition and contrast level') +
     xlab('Condition') +
