@@ -103,7 +103,7 @@ plot_proportion_present <- function(df) {
     # xlab('Bias condition and contrast level') +
     xlab('Condition') +
     # scale_x_discrete(labels = function(x) str_to_title(x), guide = guide_axis_nested(delim = '\n')) +
-    scale_x_discrete(labels = get_labels_stim_code('\n'), guide = guide_axis_nested(delim = '\n')) +
+    scale_x_discrete(labels = get_labels_stim_code('\n'), guide = legendry::guide_axis_nested(key = '\n')) +
     scale_color_manual(values=get_condition_colors())
   
 }
@@ -333,7 +333,7 @@ plot_contrast_reproduction <- function(df) {
     # xlab('Bias condition and contrast level') +
     xlab('Condition') +
     # scale_x_discrete(labels = function(x) str_to_title(x), guide = guide_axis_nested(delim = '\n')) +
-    scale_x_discrete(labels = get_labels_stim_code('\n'), guide = guide_axis_nested(delim = '\n')) +
+    scale_x_discrete(labels = get_labels_stim_code('\n'), guide = legendry::guide_axis_nested(key = '\n')) +
     scale_color_manual(values=get_condition_colors())
   
 }
