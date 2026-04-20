@@ -137,6 +137,7 @@ bf_all_data <-
 # when adjusting the limits of the plot
 rep_all_data_summary <-
   rep_data_sub_summary %>% 
+  anti_join(remove_subjects, by = join_by(bias_source, participant, contrast_level)) %>%  
   group_by(bias_source, bias_direction, contrast_level) %>% 
   reframe(value = mean_se(value)) %>% 
   unnest(value) %>% 
