@@ -1,6 +1,6 @@
 # Packages
 if (!require('pacman', quietly = TRUE)) install.packages('pacman'); library('pacman', quietly = TRUE)
-p_load(magrittr, purrr, dplyr, readr, tidyr, stringr, tidybayes, ggplot2, patchwork)  
+p_load(magrittr, purrr, dplyr, readr, tidyr, stringr, tidybayes, ggplot2, patchwork, tibble)  
 
 # model_colors <- c('empirical'='gray70')
 
@@ -143,7 +143,7 @@ for (e in experiments) {
   p <-
     data_summary %>% 
     ggplot(aes(x=contrast_level, y=y, color=data_type)) +
-    facet_wrap(. ~ bias_source, labeller = labeller(bias_source = labels_bias_source)) + 
+    facet_wrap(. ~ bias_source, labeller = labeller(bias_source = get_labels_bias_source_sample(data))) + 
     geom_hline(yintercept = 0, linetype=2) +
     geom_errorbar(data=data_summary, aes(y=y, ymin = ymin, ymax = ymax), width=0, size=6, alpha=.5) +
     geom_point(data=data_summary, aes(y=y), shape=8, size=2.5) +

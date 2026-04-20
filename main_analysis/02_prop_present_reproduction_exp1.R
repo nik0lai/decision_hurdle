@@ -1,6 +1,6 @@
 # Packages
 if (!require('pacman', quietly = TRUE)) install.packages('pacman'); library('pacman', quietly = TRUE)
-p_load(magrittr, purrr, dplyr, here, readr, tidyr, stringr, colorspace, tibble, ggplot2, ggh4x, patchwork)
+p_load(magrittr, purrr, dplyr, here, readr, tidyr, stringr, colorspace, tibble, ggplot2, ggh4x, patchwork, legendry)
 
 # Functions ---------------------------------------------------------------
 
